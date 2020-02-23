@@ -8,14 +8,14 @@ class CashRegister
     @items = []
   end
 
-  def add_item(item, price, quantity = 1)
+  def add_item(item, price, quantity = 1.0)
     @price = price
     @total += price * quantity
-    if quantity > 1
+    if quantity > 1.0
       counter = 0
       while counter < quantity
         @items << item
-        counter += 1
+        counter += 1.0
       end
     else
       @items << item
@@ -23,8 +23,8 @@ class CashRegister
   end
 
   def apply_discount
-    if @discount > 0
-      @to_take_off = (price * discount)/100
+    if @discount > 0.0
+      @to_take_off = (price * discount)/100.0
       @total -= @to_take_off
       return "After the discount, the total comes to $#{total}."
     else
