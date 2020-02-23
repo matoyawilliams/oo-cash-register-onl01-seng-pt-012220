@@ -20,6 +20,7 @@ class CashRegister
     else
       @items << item
     end
+  end
 
   def apply_discount
     if @discount > 0
@@ -29,6 +30,7 @@ class CashRegister
     else
       return "There is no discount to apply."
     end
+  end
 
   def void_last_transaction
     @total -= @price
